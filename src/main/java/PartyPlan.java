@@ -38,12 +38,42 @@ public class PartyPlan {
   public String getAlcohol(){
     return mAlcohol;
   }
+  public void setAlcohol(String alcohol){
+     mAlcohol = alcohol;
+  }
+  public float getAlcoholCost(){
+    return mAlcoholCost;
+  }
+  public void setAlcoholCost(float newCost){
+    mAlcoholCost = newCost;
+  }
+
   public String getMusic(){
     return mMusic;
   }
+  public void setMusic(String music){
+     mMusic = music;
+  }
+  public float getMusicCost(){
+    return mMusicCost;
+  }
+  public void setMusicCost(float newCost){
+    mMusicCost = newCost;
+  }
+
   public String getFood(){
     return mFood;
   }
+  public void setFood(String food){
+     mFood = food;
+  }
+  public float getFoodCost(){
+    return mFoodCost;
+  }
+  public void setFoodCost(float newCost){
+    mFoodCost = newCost;
+  }
+
   public float getCost(){
     return mCost;
   }
@@ -53,24 +83,9 @@ public class PartyPlan {
   public void replaceTotalCost(float newCost){
     mCost = newCost;
   }
-  public float getAlcoholCost(){
-    return mAlcoholCost;
-  }
-  public void setAlcoholCost(float newCost){
-    mAlcoholCost = newCost;
-  }
-  public float getMusicCost(){
-    return mMusicCost;
-  }
-  public void setMusicCost(float newCost){
-    mMusicCost = newCost;
-  }
-  public float getFoodCost(){
-    return mFoodCost;
-  }
-  public void setFoodCost(float newCost){
-    mFoodCost = newCost;
-  }
+
+
+
 
   public void calculateCost(){
     setPeopleCost();
@@ -81,16 +96,22 @@ public class PartyPlan {
         setAlcoholCost(getPeople() *50);
       } else if (alcoholChoice == 2) {
         setAlcoholCost(getPeople() *20);
+      } else if (alcoholChoice == 3) {
+        setAlcoholCost(0);
       }
       if( musicChoice == 1){
         setMusicCost(1500);
       } else if (musicChoice == 2) {
         setMusicCost(750);
+      }else if (musicChoice == 3) {
+        setMusicCost(0);
       }
       if( foodChoice == 1){
         setFoodCost(getPeople() *50);
       } else if (foodChoice == 2) {
         setFoodCost(getPeople() *20);
+      }else if (foodChoice == 3) {
+        setFoodCost(0);
       }
     setCost();
   }
@@ -105,5 +126,5 @@ public class PartyPlan {
     }
 
   }
-  
+
 }
