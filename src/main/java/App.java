@@ -17,7 +17,7 @@ public class App{
         PartyPlan newPlan = new PartyPlan(0,"3","3","3",0);
         boolean planningDetails = true;
         while (planningDetails) {
-          System.out.println("\n"+"1 - Number of people attending"+"\n"+"2 - Alcohol Services"+"\n"+"3 - Music Services"+"\n"+"4 - Catering Services"+"\n"+"5 - Start this Plan Over"+"\n"+"6 - Confirm Your Plan");
+          System.out.println("\n"+"1 - Number of people attending"+"\n"+"2 - Alcohol Services"+"\n"+"3 - Music Services"+"\n"+"4 - Catering Services"+"\n"+"5 - Start this Plan Over"+"\n"+"6 - Enter Discount Code"+"\n"+"7 - Confirm Your Plan");
           String whatToPlan = myConsole.readLine();
           if (whatToPlan.equals("1")){
             boolean planningPeople = true;
@@ -84,6 +84,20 @@ public class App{
              newPlan.calculateCost();
              displayCurrentCost(newPlan);
           }else if (whatToPlan.equals("6")){
+              System.out.println("\n"+"Enter either 'BigBang' or 'Iamspecial'. Note, you need at least 200 attendees, open bar, and catered dinner  for the 'Iamspecial' code to apply ");
+
+                String code = myConsole.readLine();
+                if(code.equals("BigBang")){
+                  newPlan.discountCode(code);
+                  newPlan.setCost();
+                  displayCurrentCost(newPlan);
+                }else if (code.equals("Iamspecial")){
+                  newPlan.discountCode(code);
+                  displayCurrentCost(newPlan);
+                }else {
+                  System.out.println("\n"+"Sorry, that's not a code");
+                }
+          }else if (whatToPlan.equals("7")){
             String alcoholSelected ="";
             if (newPlan.getAlcohol().equals("1")){
               alcoholSelected = "Open Bar";
