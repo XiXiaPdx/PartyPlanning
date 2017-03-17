@@ -9,6 +9,7 @@ public class PartyPlan {
   private float mAlcoholCost;
   private float mMusicCost;
   private float mFoodCost;
+  private float mPeopleCost;
 
   public PartyPlan (int people, String alcohol, String music, String food, int cost){
     mPeople = people;
@@ -19,10 +20,18 @@ public class PartyPlan {
     mAlcoholCost=0;
     mFoodCost=0;
     mMusicCost=0;
+    mPeopleCost=0;
   }
   public int getPeople(){
     return mPeople;
   }
+  public void setPeople(int people){
+     mPeople = people;
+  }
+  public void setPeopleCost(){
+     mPeopleCost = mPeople*20;
+  }
+
   public String getAlcohol(){
     return mAlcohol;
   }
@@ -35,8 +44,8 @@ public class PartyPlan {
   public float getCost(){
     return mCost;
   }
-  public void setCost(float newCost){
-    mCost = newCost+mAlcoholCost+mMusicCost+mFoodCost;
+  public void setCost(){
+    mCost = mPeopleCost+mAlcoholCost+mMusicCost+mFoodCost;
   }
   public void replaceTotalCost(float newCost){
     mCost = newCost;
@@ -61,7 +70,7 @@ public class PartyPlan {
   }
 
   public void calculateCost(){
-    float newCost = getPeople() * 20;
+    setPeopleCost();
     int alcoholChoice = Integer.parseInt(getAlcohol());
       int musicChoice = Integer.parseInt(getMusic());
       int foodChoice = Integer.parseInt(getFood());
@@ -80,7 +89,7 @@ public class PartyPlan {
       } else if (foodChoice == 2) {
         setFoodCost(getPeople() *20);
       }
-    setCost(newCost);
+    setCost();
   }
   public void discountCode(String code){
     if (code.equals("BigBang")) {
