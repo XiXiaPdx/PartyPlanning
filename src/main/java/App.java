@@ -33,6 +33,11 @@ public class App{
                 System.out.println("\n"+"Sorry, I didn't quite get that...");
               }
             }
+          } else if (whatToPlan.equals("2")){
+            boolean planningAlcohol = true;
+            while (planningAlcohol){
+              System.out.println("\n"+"1--Open Bar"+"\n"+"2--Service Bar"+"\n"+"3--None");
+            }
           }
         }
 
