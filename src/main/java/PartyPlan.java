@@ -31,6 +31,9 @@ public class PartyPlan {
   public void setPeopleCost(){
      mPeopleCost = mPeople*20;
   }
+  public float getPeopleCost(){
+     return mPeopleCost;
+  }
 
   public String getAlcohol(){
     return mAlcohol;
@@ -102,4 +105,5 @@ public class PartyPlan {
     }
 
   }
+  
 }

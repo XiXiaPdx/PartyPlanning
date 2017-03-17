@@ -26,6 +26,7 @@ public class App{
               String userNumberAttending = myConsole.readLine();
               if(userNumberAttending.matches("[0-9]+")){
                 newPlan.setPeople(Integer.parseInt(userNumberAttending));
+                newPlan.setPeopleCost();
                 planningPeople = false;
                 displayCurrentCost();
               } else {
@@ -41,7 +42,7 @@ public class App{
       }
     }
     public static void displayCurrentCost(){
-      System.out.println("Your Current Bill:"+"\n"+"--------------------"+"\n"+"For number of people--$");
+      System.out.println("Your Current Bill:"+"\n"+"--------------------"+"\n"+" people--$"+newPlan.getPeopleCost());
 
     }
   }
