@@ -27,23 +27,22 @@ You'll need a Java compiler installed to run this application.
 |----------|:-----:|:------:|
 | create Event object | new Event| Event |
 | assign 10 People to Event | String "10"| int 10 |
-| assign Alcohol to Event | String "1"| String "Open Bar" |
-| assign Music to Event | String "1"| String "Live Band" |
-| assign Food to Event | String "1"| String "Catered 5 Course Dinner" |
-| assign Alcohol to Event | String "1"| String "Open Bar" |
+| assign Alcohol to Event | String "1"| String "1" |
+| assign Music to Event | String "1"| String "1" |
+| assign Food to Event | String "1"| String "1" |
+| assign Alcohol to Event | String "1"| String "1" |
 | get Cost of Event | getCost()| 1000 |
 | add Cost to Event based on People | int 50| int 2000 |
-| add Cost to Event based on Alcohol | int 50| int 2000 |
-| add Cost to Event based on Music | int 50| int 2000 |
-| add Cost to Event based on Food | int 50| int 2000 |
-
-
-
+| add Cost to Event based on Alcohol | String "1"| people*50|
+| add Cost to Event based on Music | String "1"| int 1500|
+| add Cost to Event based on Food | String "1"| people*50 |
+| reduce cost from discount Code | String "BigBang"| int 750|
+| reduce cost from discount Code | String "Iamspecial"| cost*0.75|
 
 
 ## Known Bugs
 
-The results do not dispay on Safari browser. 2/25/17
+double coupon application
 
 ## Support and contact details
 
