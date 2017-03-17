@@ -36,6 +36,9 @@ public class PartyPlan {
     return mCost;
   }
   public void setCost(float newCost){
+    mCost = newCost+mAlcoholCost+mMusicCost+mFoodCost;
+  }
+  public void replaceTotalCost(float newCost){
     mCost = newCost;
   }
   public float getAlcoholCost(){
@@ -51,10 +54,10 @@ public class PartyPlan {
     mMusicCost = newCost;
   }
   public float getFoodCost(){
-    return mMusicCost;
+    return mFoodCost;
   }
   public void setFoodCost(float newCost){
-    mMusicCost = newCost;
+    mFoodCost = newCost;
   }
 
   public void calculateCost(){
@@ -64,26 +67,30 @@ public class PartyPlan {
       int foodChoice = Integer.parseInt(getFood());
       if( alcoholChoice == 1){
         setAlcoholCost(getPeople() *50);
-        newCost += getAlcoholCost();
       } else if (alcoholChoice == 2) {
         setAlcoholCost(getPeople() *20);
-        newCost += getAlcoholCost();
       }
       if( musicChoice == 1){
         setMusicCost(1500);
-        newCost += getMusicCost();
       } else if (musicChoice == 2) {
         setMusicCost(750);
-        newCost += getMusicCost();
       }
       if( foodChoice == 1){
         setFoodCost(getPeople() *50);
-        newCost += getFoodCost();
       } else if (foodChoice == 2) {
         setFoodCost(getPeople() *20);
-        newCost += getFoodCost();
       }
     setCost(newCost);
   }
+  public void discountCode(String code){
+    if (code.equals("BigBang")) {
+       setMusicCost(getMusicCost()*0.5f);
+    } else if (code.equals("Iamspecial")){
+      if(getPeople()>=200 && getAlcohol().equals("1") && getFood().equals("1")){
+        System.out.println(getCost());
+        replaceTotalCost(getCost()*0.75f);
+      }
+    }
 
+  }
 }
