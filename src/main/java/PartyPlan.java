@@ -34,7 +34,6 @@ public class PartyPlan {
   public float getPeopleCost(){
      return mPeopleCost;
   }
-
   public String getAlcohol(){
     return mAlcohol;
   }
@@ -47,7 +46,6 @@ public class PartyPlan {
   public void setAlcoholCost(float newCost){
     mAlcoholCost = newCost;
   }
-
   public String getMusic(){
     return mMusic;
   }
@@ -60,7 +58,6 @@ public class PartyPlan {
   public void setMusicCost(float newCost){
     mMusicCost = newCost;
   }
-
   public String getFood(){
     return mFood;
   }
@@ -73,7 +70,6 @@ public class PartyPlan {
   public void setFoodCost(float newCost){
     mFoodCost = newCost;
   }
-
   public float getCost(){
     return mCost;
   }
@@ -83,10 +79,6 @@ public class PartyPlan {
   public void replaceTotalCost(float newCost){
     mCost = newCost;
   }
-
-
-
-
   public void calculateCost(){
     setPeopleCost();
     int alcoholChoice = Integer.parseInt(getAlcohol());
@@ -124,7 +116,5 @@ public class PartyPlan {
         replaceTotalCost(getCost()*0.75f);
       }
     }
-
   }
-
 }

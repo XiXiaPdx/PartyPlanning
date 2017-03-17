@@ -96,6 +96,4 @@ public class TestPartyPlan {
     testEvent.discountCode("Iamspecial");
     assertEquals(expectedOut, testEvent.getCost(), .001);
   }
-
-
 }
