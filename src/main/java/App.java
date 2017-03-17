@@ -28,7 +28,7 @@ public class App{
                 newPlan.setPeople(Integer.parseInt(userNumberAttending));
                 newPlan.setPeopleCost();
                 planningPeople = false;
-                displayCurrentCost();
+                displayCurrentCost(newPlan);
               } else {
                 System.out.println("\n"+"Sorry, I didn't quite get that...");
               }
@@ -41,8 +41,7 @@ public class App{
       }
       }
     }
-    public static void displayCurrentCost(){
-      System.out.println("Your Current Bill:"+"\n"+"--------------------"+"\n"+" people--$"+newPlan.getPeopleCost());
-
+    public static void displayCurrentCost(PartyPlan plan){
+      System.out.println("Your Current Bill:"+"\n"+"--------------------"+"\n"+" people--$"+ plan.getPeopleCost()+"\n"+" Alcohol Services--$"+plan.getAlcoholCost()+"\n"+" Music Services--$"+plan.getMusicCost()+"\n"+" Catering Services--$"+plan.getFoodCost());
     }
   }
